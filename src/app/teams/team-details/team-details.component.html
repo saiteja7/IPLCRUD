@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="d-block">
+        <h3 class="d3-inline">{{team.team}}</h3>
+    </div>
+    <hr>
+    <div>
+        <h5>{{team.description}}</h5>
+        <table class="table table-hover mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Player</th>
+                    <th scope="col">Mat</th>
+                    <th scope="col">Runs</th>
+                    <th scope="col">Hs</th>
+                    <th scope="col">Avg</th>
+                    <th scope="col">SR</th>
+                    <th scope="col">wickets</th>
+                    <th scope="col">Best</th>
+                    <th scope="col">100</th>
+                    <th scope="col">50</th>
+                    <th scope="col">4s</th>
+                    <th scope="col">6s</th>
+                    <th scope="col">catches</th>
+                    <th scope="col">ST</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of team.players">
+                    <th>{{player.playerName}}</th>
+                    <td class="text-small text-muted font-weight-small">{{player.matchesPlayed}}</td>
+                    <td class="text-small text-muted font-weight-small"> {{player.runs}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.highestScore}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.average}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.strikeRate}}</td>
+                    <td class="text-small text-muted font-weight-small"> {{player.wickets}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.bestWicket}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.centuries}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.fifties}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.fours}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.sixes}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.catches}}</td>
+                    <td class="text-small text-muted font-weight-small">{{player.strikeRate}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+</div>
