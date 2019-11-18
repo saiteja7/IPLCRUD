@@ -1,30 +1,32 @@
 <div class="row pt-3">
-    <div class="col-3">
+  <div class="col-3">
+    <div class="d-block">
+      <h4 class="d-inline">Teams</h4>
+      <fa
+        [name]="'plus'"
+        [pull]="'right'"
+        [size]="2"
+        routerLink="/teams/add"
+      ></fa>
+    </div>
+    <hr />
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let team of teams">
         <div class="d-block">
-            <h4 class="d-inline">Teams</h4>
-            <fa [name]=" 'plus' " [pull]=" 'right' " [size]="2" routerLink="/teams/add"></fa>
-
+          <h6 class="d-inline">{{ team.team }}</h6>
+          <fa [name]="'trash'" [pull]="'right'" (click)="deleteTeam(team)"></fa>
+          <fa [name]="'pencil'" [pull]="'right'" (click)="editTeam(team)"></fa>
+          <fa
+            [name]="'info-circle'"
+            [pull]="'right'"
+            (click)="teamDetails(team)"
+          ></fa>
         </div>
-        <hr>
-        <div class="list-group">
-            <div class="list-group-item" *ngFor="let team of teams">
-                <div class="d-block">
-
-                    <h6 class="d-inline">{{team.team}}</h6>
-                    <fa [name]=" 'trash' " [pull]=" 'right' "></fa>
-                    <fa [name]=" 'pencil' " [pull]=" 'right' "></fa>
-                    <fa [name]=" 'info-circle' " [pull]=" 'right' "></fa>
-                </div>
-                <h6 class="text-muted">{{team.description}}</h6>
-            </div>
-
-
-
-        </div>
-
+        <h6 class="text-muted">{{ team.description }}</h6>
+      </div>
     </div>
-    <div class="col-9">
-
-        <router-outlet></router-outlet>
-    </div>
+  </div>
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
 </div>

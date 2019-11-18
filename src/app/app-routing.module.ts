@@ -6,23 +6,23 @@ import { AddTeamsComponent } from './teams/add-teams/add-teams.component';
 import { TeamsListComponent } from './teams/teams-list/teams-list.component';
 import { TeamDetailsComponent } from './teams/team-details/team-details.component';
 
-
 const routes: Routes = [
   { path: 'players', component: PlayersListComponent },
 
   { path: 'players/add', component: AddPlayerComponent },
   {
-    path: 'teams', component: TeamsListComponent, children: [
+    path: 'teams',
+    component: TeamsListComponent,
+    children: [
       { path: ':id/:name', component: TeamDetailsComponent },
       { path: 'add', component: AddTeamsComponent },
-      { path: ':edit/:id', component: AddTeamsComponent }
+      { path: 'edit/:id/:name', component: AddTeamsComponent }
     ]
-  },
-
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

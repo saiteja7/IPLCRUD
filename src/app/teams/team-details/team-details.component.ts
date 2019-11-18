@@ -13,21 +13,21 @@ export class TeamDetailsComponent implements OnInit {
   id: number;
   name: string;
 
-  constructor(private teamService: TeamsService, private router: ActivatedRoute) {
-
-  }
+  constructor(
+    private teamService: TeamsService,
+    private router: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.router.params.subscribe(params => {
+      // tslint:disable-next-line: no-string-literal
       this.id = params['id'];
-      this.name = params['name']
+      // tslint:disable-next-line: no-string-literal
+      this.name = params['name'];
       console.log(this.id, this.name);
 
       this.team = this.teamService.getTeam(this.id);
-      console.log(this.team)
-
-    })
-
+      console.log(this.team);
+    });
   }
-
 }
